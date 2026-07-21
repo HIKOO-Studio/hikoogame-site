@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hikoogame.com/sitemap.xml
