@@ -53,6 +53,7 @@
               <li>a verified Google Play Games player identifier or TikTok platform identifier, plus our internal player ID;</li>
               <li>tutorial and level progress, game sessions and results, inventory, energy, poster progress, rewards, and content version;</li>
               <li>request timestamps, request IDs, approximate location derived from IP address, IP address, error and diagnostic information, and security or rate-limit signals;</li>
+              <li>on Android, Firebase Crashlytics crash and ANR stack traces, relevant application state, relevant device metadata, and Crashlytics/Firebase installation identifiers used to group failures and estimate affected installations;</li>
               <li>when rewarded ads are available on Android, advertising and app-interaction data processed by Google, including ad views and taps, diagnostic information, and device or account identifiers such as the Android advertising ID or app set ID;</li>
               <li>support and privacy messages you choose to send us; and</li>
               <li>essential website request data processed by our hosting and delivery providers.</li>
@@ -61,6 +62,7 @@
             <p>The Android version uses Google Mobile Ads to offer optional rewarded video ads, such as ads that grant energy after successful completion. Google may automatically collect and share IP address, product interactions, diagnostic information, and device or account identifiers for advertising, analytics, and fraud prevention. We do not use these identifiers as your Paw Encore account identity.</p>
             <p>We use Google's User Messaging Platform to request and record privacy choices where required. The Game requests ads only after that platform indicates that ads may be requested. If consent is required and is not available, rewarded ads and the associated optional rewards remain unavailable.</p>
             <p>The Android release does not enable Play Billing.</p>
+            <p>The Android version uses Firebase Crashlytics to diagnose Java and native crashes and application-not-responding failures. We do not enable Google Analytics for Crashlytics breadcrumbs, and we do not attach the Paw Encore player ID, advertising ID, raw platform credentials, or a free-text user ID to Crashlytics reports.</p>
           </section>
           <section id="use">
             <h2>3. How and why we use data</h2>
@@ -81,6 +83,7 @@
             <ul>
               <li><strong>Google Play Games Services</strong> for Android platform authentication;</li>
               <li><strong>Google Mobile Ads and User Messaging Platform</strong> for optional rewarded ads, consent choices, advertising measurement, analytics, and fraud prevention;</li>
+              <li><strong>Firebase Crashlytics</strong> for Android crash, ANR, and native stack diagnostics;</li>
               <li><strong>TikTok</strong> for TikTok platform authentication and platform features;</li>
               <li><strong>Tencent Cloud</strong> in Singapore and associated delivery locations for API hosting, databases, object storage, security, and content delivery;</li>
               <li><strong>GitHub Pages</strong> for public website hosting; and</li>
@@ -94,6 +97,7 @@
               <li>Account and gameplay data is kept while your Paw Encore account remains active. Following a verified deletion request, active account data is deleted or irreversibly anonymized within 30 days.</li>
               <li>Encrypted database backups expire within 14 days after the corresponding active data is removed.</li>
               <li>API, security, and website delivery logs are retained for no longer than 30 days unless a longer period is required to investigate abuse, protect users, or comply with law.</li>
+              <li>Firebase states that Crashlytics crash stack traces, extracted native minidump data, and associated installation identifiers are retained for 90 days before removal from live and backup systems begins.</li>
               <li>Support and privacy correspondence is normally retained for up to 24 months after the matter is closed.</li>
               <li>A minimal record of a completed request may be retained where necessary to demonstrate compliance or prevent fraud.</li>
             </ul>
