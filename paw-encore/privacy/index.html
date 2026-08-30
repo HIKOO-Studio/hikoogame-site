@@ -24,7 +24,7 @@
       <p class="eyebrow">Paw Encore legal</p>
       <h1>Privacy Policy</h1>
       <div class="document-meta">
-        <div><strong>Effective</strong>27 August 2026</div>
+        <div><strong>Effective</strong>28 August 2026</div>
         <div><strong>Controller</strong>HIKOO STUDIO CO., LIMITED</div>
         <div><strong>Game</strong>Paw Encore</div>
       </div>
@@ -53,7 +53,7 @@
             <ul>
               <li>a verified Google Play Games player identifier, TikTok platform identifier, pseudonymous iOS installation credential, or verified Sign in with Apple subject, plus our internal player ID;</li>
               <li>tutorial and level progress, game sessions and results, inventory, energy, poster progress, rewards, and content version;</li>
-              <li>request timestamps, request IDs, approximate location derived from IP address, IP address, error and diagnostic information, and security or rate-limit signals;</li>
+              <li>request timestamps, request IDs, approximate location derived from IP address, IP address, error and diagnostic information, and security or rate-limit signals; unexpected backend errors may be associated with a pseudonymous internal player ID and request ID for diagnosis;</li>
               <li>on Android and iOS, Firebase Crashlytics crash, native, and relevant non-fatal stack traces, relevant application state, relevant device metadata, and Crashlytics/Firebase installation identifiers used to group failures and estimate affected installations; Android reports may also include application-not-responding information;</li>
               <li>when rewarded ads are available on Android or iOS, advertising and app-interaction data processed by Google, including ad views and taps, diagnostic information, and device or account identifiers made available by the operating system;</li>
               <li>survey choices and, only when you choose to provide it, a short game-feedback response of up to 500 characters; surveys do not ask for your name or contact details;</li>
@@ -67,6 +67,7 @@
             <p>When Google requires privacy options to remain available, iOS players can reopen them from the Game's Settings. The iOS version does not request App Tracking Transparency permission, is configured not to use the IDFA, and disables personalized publisher treatment.</p>
             <p>The current Android and iOS releases do not offer in-app purchases. Optional rewarded ads are not purchases.</p>
             <p>The Android and iOS versions use Firebase Crashlytics to diagnose Java, Objective-C, C++, and native crashes; Android also reports application-not-responding failures, and iOS may report uncaught Cocos JavaScript exceptions as non-fatal events. We do not enable Google Analytics for Crashlytics breadcrumbs, and we do not attach the Paw Encore player ID, advertising ID, raw platform or installation credentials, purchase information, or a free-text user ID to Crashlytics reports.</p>
+            <p>Our backend may use Sentry to receive unexpected server error and panic diagnostics. Those events may include a pseudonymous internal player ID, request or session correlation ID, operation label, server environment, and scrubbed request path, but not authorization headers, raw platform credentials, Apple authorization material, or request-body content.</p>
           </section>
           <section id="use">
             <h2>3. How and why we use data</h2>
@@ -83,12 +84,14 @@
           </section>
           <section id="storage">
             <h2>4. Local storage, providers, and international processing</h2>
-            <p>Saved progression, inventory, energy, posters, and rewards are held by the Paw Encore backend, not as a local save. The Game may retain device preferences and short-lived request-retry records locally; those records cannot create or advance progression.</p>
+            <p>Saved progression, inventory, energy, posters, and rewards are held by the Paw Encore backend, not as a local save. The Game may retain device preferences and, while an account-deletion result is unresolved, a protected recovery record in the iOS Keychain containing the internal player reference, deletion-request UUID, and a randomly generated recovery capability. The capability is sent only to our account-deletion and deletion-recovery endpoints and cannot be used to log in, read game data, or create or advance progression. The record is removed after the server confirms deletion and local cleanup finishes, or after the server confirms that the account remains active and cancellation finishes; an unresolved record remains only to prevent the Game from silently using or recreating the old account.</p>
             <p>We use the following service providers:</p>
             <ul>
               <li><strong>Google Play Games Services</strong> for Android platform authentication;</li>
+              <li><strong>Sign in with Apple</strong> for optional iOS account linking, recovery, reauthentication, and authorization revocation;</li>
               <li><strong>Google Mobile Ads and User Messaging Platform</strong> for optional rewarded ads, consent choices, advertising measurement, analytics, and fraud prevention;</li>
               <li><strong>Firebase Crashlytics</strong> for Android and iOS crash, native, non-fatal, and Android ANR diagnostics;</li>
+              <li><strong>Sentry</strong> for unexpected backend error and panic diagnostics;</li>
               <li><strong>TikTok</strong> for TikTok platform authentication and platform features;</li>
               <li><strong>Tencent Cloud</strong> in Singapore and associated delivery locations for API hosting, databases, object storage, security, and content delivery;</li>
               <li><strong>GitHub Pages</strong> for public website hosting; and</li>
@@ -99,10 +102,12 @@
           <section id="retention">
             <h2>5. Retention and deletion</h2>
             <ul>
-              <li>Account and gameplay data is kept while your Paw Encore account remains active. Following a verified deletion request, active account data is deleted or irreversibly anonymized within 30 days.</li>
+              <li>Account and gameplay data is kept while your Paw Encore account remains active. A confirmed in-app deletion removes or irreversibly anonymizes active account data immediately; a verified support request is completed within 30 days.</li>
+              <li>An iOS account-deletion recovery record is kept only until the Game can safely confirm and finish deletion or safely cancel the request. If automatic recovery remains unresolved, the record stays protected and blocks use of the old account until support resolves the request.</li>
               <li>Encrypted database backups expire within 14 days after the corresponding active data is removed.</li>
               <li>API, security, and website delivery logs are retained for no longer than 30 days unless a longer period is required to investigate abuse, protect users, or comply with law.</li>
               <li>Firebase states that Crashlytics crash stack traces, extracted native minidump data, and associated installation identifiers are retained for 90 days before removal from live and backup systems begins.</li>
+              <li>Backend Sentry error events are configured for no longer than 30 days, except where a specific event must be retained longer to investigate abuse, protect users, or comply with law.</li>
               <li>Support and privacy correspondence is normally retained for up to 24 months after the matter is closed.</li>
               <li>A minimal record of a completed request may be retained where necessary to demonstrate compliance or prevent fraud.</li>
             </ul>
@@ -111,7 +116,7 @@
           <section id="rights">
             <h2>6. Your choices and rights</h2>
             <p>Depending on where you live, you may have rights to access, correct, delete, restrict, or object to processing, to receive a portable copy, or to withdraw consent. You may also complain to your local data protection authority.</p>
-            <p>Use our <a href="/paw-encore/delete-account/">account deletion page</a> or contact <a href="mailto:hikooStudio@outlook.com">hikooStudio@outlook.com</a>. We may ask for proportionate information to verify that the account belongs to you.</p>
+            <p>On iOS, use <strong>Settings → Delete account</strong> for the direct in-app flow. You can also use our <a href="/paw-encore/delete-account/">account deletion page</a> or contact <a href="mailto:hikooStudio@outlook.com">hikooStudio@outlook.com</a> if you cannot access the game. We may ask for proportionate information to verify that the account belongs to you.</p>
             <p>Where Google requires a privacy message, you may accept or decline the choices presented before ads are requested. On iOS, you can reopen required advertising privacy options from the Game's Settings; on Android, you may also reset or delete the Android advertising ID in device settings. Declining a required advertising choice may make rewarded ads and their optional rewards unavailable, but it does not delete your Paw Encore account.</p>
           </section>
           <section id="children">
