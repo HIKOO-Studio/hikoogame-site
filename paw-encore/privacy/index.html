@@ -24,7 +24,7 @@
       <p class="eyebrow">Paw Encore legal</p>
       <h1>Privacy Policy</h1>
       <div class="document-meta">
-        <div><strong>Effective</strong>28 August 2026</div>
+        <div><strong>Effective</strong>1 September 2026</div>
         <div><strong>Controller</strong>HIKOO STUDIO CO., LIMITED</div>
         <div><strong>Game</strong>Paw Encore</div>
       </div>
@@ -44,30 +44,32 @@
           <section id="overview">
             <h2>1. Overview</h2>
             <p>HIKOO STUDIO CO., LIMITED ("HIKOO STUDIO," "we," "us," or "our") provides Paw Encore (the "Game"), including Android and iOS app identifier <code>com.hikoostudio.pawencore</code>. This policy explains how we handle information when you use the Game, its account services, support channels, and this website.</p>
-            <p>Paw Encore is an online game for saved progression. Google Play Games Services authenticates Android players; TikTok authenticates players on the TikTok platform; iOS can use a random installation credential stored in the iOS Keychain to create or resume an internal Paw Encore player account. An iOS player may separately choose Sign in with Apple in Settings to link that progress and restore it on another Apple device. We do not use an iOS hardware or advertising identifier as the installation credential. Google Play Games, TikTok, Apple, and installation-based identities are not automatically linked to one another.</p>
+            <p>Paw Encore is an online game for saved progression. Google Play Games Services authenticates Android players; TikTok authenticates players on the TikTok platform; iOS uses a random installation credential stored in the iOS Keychain to create or resume an internal Paw Encore player account. No user registration or sign-in is required on iOS. We do not use an iOS hardware or advertising identifier as the installation credential. Google Play Games, TikTok, and installation-based identities are not automatically linked to one another.</p>
             <div class="notice"><strong>Trial play:</strong> if platform authentication is unavailable or declined, you may use a non-persistent trial. Trial progress is not saved as an account, is not merged later, and starts fresh after the process closes. Language, audio, vibration, and similar preferences may remain on your device.</div>
           </section>
           <section id="data">
             <h2>2. Data we process</h2>
             <p>Depending on your platform and actions, we process:</p>
             <ul>
-              <li>a verified Google Play Games player identifier, TikTok platform identifier, pseudonymous iOS installation credential, or verified Sign in with Apple subject, plus our internal player ID;</li>
+              <li>a verified Google Play Games player identifier, TikTok platform identifier, or pseudonymous iOS installation credential, plus our internal player ID;</li>
               <li>tutorial and level progress, game sessions and results, inventory, energy, poster progress, rewards, and content version;</li>
+              <li>when you enable <strong>Share Gameplay Analytics</strong> on iOS, gameplay and interface-interaction events linked to the internal player account, used to understand and improve the Game;</li>
               <li>request timestamps, request IDs, approximate location derived from IP address, IP address, error and diagnostic information, and security or rate-limit signals; unexpected backend errors may be associated with a pseudonymous internal player ID and request ID for diagnosis;</li>
-              <li>on Android and iOS, Firebase Crashlytics crash, native, and relevant non-fatal stack traces, relevant application state, relevant device metadata, and Crashlytics/Firebase installation identifiers used to group failures and estimate affected installations; Android reports may also include application-not-responding information;</li>
+              <li>on Android, Firebase Crashlytics crash, native, and relevant non-fatal stack traces, relevant application state, relevant device metadata, and Crashlytics/Firebase installation identifiers used to group failures and estimate affected installations; Android reports may also include application-not-responding information;</li>
               <li>when rewarded ads are available on Android or iOS, advertising and app-interaction data processed by Google, including ad views and taps, diagnostic information, and device or account identifiers made available by the operating system;</li>
               <li>survey choices and, only when you choose to provide it, a short game-feedback response of up to 500 characters; surveys do not ask for your name or contact details;</li>
               <li>support and privacy messages you choose to send us; and</li>
               <li>essential website request data processed by our hosting and delivery providers.</li>
             </ul>
             <p>For Google Play Games sign-in, we request a one-time server authorization code and do not request Google email, contacts, precise location, photos, audio, or payment information. We do not use an Android hardware identifier or advertising identifier as your Paw Encore account identity.</p>
-            <p>If you choose Sign in with Apple, the Game sends a one-time authorization code and cryptographic nonce to our server so Apple can verify the request. We use the verified Apple subject only to link or restore Paw Encore progress. We do not request or store your Apple Account email address or name.</p>
+            <p>On iOS, a first-launch notice appears before Paw Encore connects to its account, optional gameplay analytics, or advertising services. The notice explains the installation-linked account and saved progress that are required to provide the Game. The optional <strong>Share Gameplay Analytics</strong> choice is off by default, and you can continue with it off.</p>
             <p>The Android and iOS versions use Google Mobile Ads to offer optional rewarded video ads, such as ads that grant energy after successful completion. Google may automatically collect and share IP address, product interactions, diagnostic information, and device or account identifiers for advertising, analytics, and fraud prevention. We do not use these identifiers as your Paw Encore account identity.</p>
             <p>We use Google's User Messaging Platform to request and record privacy choices where required. The Game requests ads only after that platform indicates that ads may be requested. If consent is required and is not available, rewarded ads and the associated optional rewards remain unavailable.</p>
-            <p>When Google requires privacy options to remain available, iOS players can reopen them from the Game's Settings. The iOS version does not request App Tracking Transparency permission, is configured not to use the IDFA, and disables personalized publisher treatment.</p>
+            <p>When Google requires privacy options to remain available, iOS players can reopen them from the Game's Settings. The iOS version does not request App Tracking Transparency permission, app-owned code does not access the IDFA, and the Game disables personalized publisher treatment before Google Mobile Ads starts.</p>
             <p>The current Android and iOS releases do not offer in-app purchases. Optional rewarded ads are not purchases.</p>
-            <p>The Android and iOS versions use Firebase Crashlytics to diagnose Java, Objective-C, C++, and native crashes; Android also reports application-not-responding failures, and iOS may report uncaught Cocos JavaScript exceptions as non-fatal events. We do not enable Google Analytics for Crashlytics breadcrumbs, and we do not attach the Paw Encore player ID, advertising ID, raw platform or installation credentials, purchase information, or a free-text user ID to Crashlytics reports.</p>
-            <p>Our backend may use Sentry to receive unexpected server error and panic diagnostics. Those events may include a pseudonymous internal player ID, request or session correlation ID, operation label, server environment, and scrubbed request path, but not authorization headers, raw platform credentials, Apple authorization material, or request-body content.</p>
+            <p>The Android version uses Firebase Crashlytics to diagnose Java and native crashes and application-not-responding failures. The current iOS build does not embed or operate Firebase Crashlytics or another app-controlled crash-reporting SDK. When Apple makes platform diagnostics available under your device, TestFlight, and Apple privacy settings, we may use Xcode Organizer/TestFlight reports, device logs, and reproducible steps to diagnose iOS failures.</p>
+            <p>The iOS gameplay-analytics choice does not control required account, progress, security, deletion, or first-party API error and abuse-prevention processing. It also does not replace Google's separate advertising privacy choices. Rewarded ads remain optional, and Google Mobile Ads and User Messaging Platform process data under the advertising disclosures above when those services are used.</p>
+            <p>Our backend may use Sentry to receive unexpected server error and panic diagnostics. Those events may include a pseudonymous internal player ID, request or session correlation ID, operation label, server environment, and scrubbed request path, but not authorization headers, raw platform credentials, authorization codes or tokens, or request-body content.</p>
           </section>
           <section id="use">
             <h2>3. How and why we use data</h2>
@@ -88,9 +90,8 @@
             <p>We use the following service providers:</p>
             <ul>
               <li><strong>Google Play Games Services</strong> for Android platform authentication;</li>
-              <li><strong>Sign in with Apple</strong> for optional iOS account linking, recovery, reauthentication, and authorization revocation;</li>
               <li><strong>Google Mobile Ads and User Messaging Platform</strong> for optional rewarded ads, consent choices, advertising measurement, analytics, and fraud prevention;</li>
-              <li><strong>Firebase Crashlytics</strong> for Android and iOS crash, native, non-fatal, and Android ANR diagnostics;</li>
+              <li><strong>Firebase Crashlytics</strong> for Android crash, native, and ANR diagnostics;</li>
               <li><strong>Sentry</strong> for unexpected backend error and panic diagnostics;</li>
               <li><strong>TikTok</strong> for TikTok platform authentication and platform features;</li>
               <li><strong>Tencent Cloud</strong> in Singapore and associated delivery locations for API hosting, databases, object storage, security, and content delivery;</li>
@@ -106,17 +107,18 @@
               <li>An iOS account-deletion recovery record is kept only until the Game can safely confirm and finish deletion or safely cancel the request. If automatic recovery remains unresolved, the record stays protected and blocks use of the old account until support resolves the request.</li>
               <li>Encrypted database backups expire within 14 days after the corresponding active data is removed.</li>
               <li>API, security, and website delivery logs are retained for no longer than 30 days unless a longer period is required to investigate abuse, protect users, or comply with law.</li>
-              <li>Firebase states that Crashlytics crash stack traces, extracted native minidump data, and associated installation identifiers are retained for 90 days before removal from live and backup systems begins.</li>
+              <li>For Android Crashlytics, Firebase states that crash stack traces, extracted native minidump data, and associated installation identifiers are retained for 90 days before removal from live and backup systems begins.</li>
               <li>Backend Sentry error events are configured for no longer than 30 days, except where a specific event must be retained longer to investigate abuse, protect users, or comply with law.</li>
               <li>Support and privacy correspondence is normally retained for up to 24 months after the matter is closed.</li>
               <li>A minimal record of a completed request may be retained where necessary to demonstrate compliance or prevent fraud.</li>
             </ul>
-            <p>Deletion removes or irreversibly anonymizes Game data controlled by HIKOO STUDIO, subject to limited legal, security, and fraud-prevention exceptions. It does not delete your Google Account, Google Play Games profile, TikTok account, or Apple Account.</p>
+            <p>Deletion removes or irreversibly anonymizes Game data controlled by HIKOO STUDIO, subject to limited legal, security, and fraud-prevention exceptions. It does not delete any separate device, app-store, or third-party platform account.</p>
           </section>
           <section id="rights">
             <h2>6. Your choices and rights</h2>
             <p>Depending on where you live, you may have rights to access, correct, delete, restrict, or object to processing, to receive a portable copy, or to withdraw consent. You may also complain to your local data protection authority.</p>
             <p>On iOS, use <strong>Settings → Delete account</strong> for the direct in-app flow. You can also use our <a href="/paw-encore/delete-account/">account deletion page</a> or contact <a href="mailto:hikooStudio@outlook.com">hikooStudio@outlook.com</a> if you cannot access the game. We may ask for proportionate information to verify that the account belongs to you.</p>
+            <p>On iOS, open <strong>Settings → Data &amp; Privacy Choices</strong> at any time to enable or disable optional gameplay analytics. Disabling it stops Paw Encore from recording or forwarding new gameplay analytics after the setting is applied and clears unsent in-game analytics; events from the disabled period are not sent if you enable it again later. Required account, progress, API error handling, security, and deletion processing continues so the Game can provide and protect the service you request.</p>
             <p>Where Google requires a privacy message, you may accept or decline the choices presented before ads are requested. On iOS, you can reopen required advertising privacy options from the Game's Settings; on Android, you may also reset or delete the Android advertising ID in device settings. Declining a required advertising choice may make rewarded ads and their optional rewards unavailable, but it does not delete your Paw Encore account.</p>
           </section>
           <section id="children">
